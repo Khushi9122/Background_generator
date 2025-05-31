@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f3f3f3;
+  color: #333;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.controls {
+  width: 350px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.controls h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+}
+
+input[type="color"],
+input[type="text"],
+input[type="range"],
+select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #7e57c2;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #9575cd;
+}
+
+.preview-box {
+  flex: 1;
+  transition: background 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.preview-box button {
+  margin: 20px;
+  background: #ffffffaa;
+  color: #333;
+  border: 1px solid #ccc;
+  backdrop-filter: blur(5px);
+}
+
+.animate-gradient {
+  animation: gradientMove 5s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.preset-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.preset-thumb {
+  height: 60px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.preset-thumb:hover {
+  border-color: #7e57c2;
+}
+
+.preset-thumb span {
+  position: absolute;
+  bottom: 2px;
+  left: 5px;
+  color: white;
+  font-size: 12px;
+  text-shadow: 0 0 2px black;
+}
+
+.preset-thumb button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 90%;
+  height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
